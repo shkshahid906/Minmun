@@ -4,12 +4,12 @@ const cardsData = [
   {
     type: 'video',
     src: 'ved5.mp4',
-    quote: 'Happy Birthday! May your day be as bright as your smile and as wonderful as you are!'
+    quote: 'Muneeb Iccha ..Yappiee Birthday '
   },
   {
     type: 'image',
     src: 'img1.jpg',
-    quote: 'age is just a number... but wrinkles are a real thing!'
+    quote: 'Age is just a number... but wrinkles are a real thing!'
   },
   {
     type: 'video',
@@ -39,18 +39,44 @@ const cardsData = [
   {
     type: 'image',
     src: 'img4.jpg',
-    quote: 'Count your life by smiles, not tears. Count your age by friends, not years!'
+    quote: 'Ippo Blood Change aaini 😁😁'
   },
-   {
+  {
     type: 'video',
     src: 'ved4.mp4',
-    quote: 'May all your wishes come true today and always!'
+    quote: 'Future Wife Set '
+  },
+  {
+    type: 'image',
+    src: 'img5.jpg',
+    quote: 'Gadhe ka Ghoda kaha hai ? '
+  },
+  {
+    type: 'video',
+    src: 'ved12.mp4',
+    quote: ' 💪🏻Challenge Accepted'
   },
   {
     type: 'video',
     src: 'ved7.mp4',
     quote: 'Muneeb, youve got the best birthday hair... its called "gray"!'
-  }
+  },
+  {
+    type: 'image',
+    src: 'img6.jpg',
+    quote: 'OG Muneeb '
+  },
+  {
+    type: 'video',
+    src: 'ved9.mp4',
+    quote: 'Endh jolly...wohoo'
+  },
+  {
+    type: 'video',
+    src: 'ved10.mp4',
+    quote: 'Endh Chanda!'
+  },
+  
 ];
 
 const cardsWrapper = document.getElementById('cards-wrapper');
