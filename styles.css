@@ -1,0 +1,392 @@
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background: linear-gradient(to bottom, #fce7f3, #ede9fe);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+/* Loading Screen */
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(to right, #ff5252, #9c27b0);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+
+.loading-content {
+  text-align: center;
+  padding: 1rem;
+}
+
+.icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  animation: bounce 2s infinite;
+}
+
+.icon {
+  width: 4rem;
+  height: 4rem;
+  color: white;
+  margin-right: 0.5rem;
+}
+
+.loading-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.funny-text {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 2rem;
+  height: 2rem;
+  animation: pulse 2s infinite;
+}
+
+.progress-container {
+  width: 100%;
+  max-width: 28rem;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 9999px;
+  height: 1rem;
+  overflow: hidden;
+}
+
+.progress-bar {
+  background-color: white;
+  height: 100%;
+  border-radius: 9999px;
+  transition: width 0.3s ease-out;
+  width: 0%;
+}
+
+.progress-text {
+  margin-top: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.loading-icons {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  animation: spin 8s linear infinite;
+}
+
+.snowflake-icon {
+  width: 2rem;
+  height: 2rem;
+}
+
+.snowflake-icon:nth-child(1) {
+  color: #ffeb3b;
+}
+
+.snowflake-icon:nth-child(2) {
+  color: #f48fb1;
+}
+
+.snowflake-icon:nth-child(3) {
+  color: #90caf9;
+}
+
+/* Main Content */
+.main-content {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.confetti-canvas {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.floating-elements {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.floating-icon {
+  position: absolute;
+}
+
+.floating-icon[data-lucide="cake"] {
+  width: 3rem;
+  height: 3rem;
+  color: #ec4899;
+}
+
+.floating-icon[data-lucide="gift"] {
+  width: 2.5rem;
+  height: 2.5rem;
+  color: #a855f7;
+}
+
+.floating-icon[data-lucide="heart"] {
+  width: 2rem;
+  height: 2rem;
+  color: #ef4444;
+}
+
+.floating-icon[data-lucide="party-popper"] {
+  width: 3.5rem;
+  height: 3.5rem;
+  color: #eab308;
+}
+
+.floating-icon[data-lucide="gift"]:last-child {
+  color: #3b82f6;
+}
+
+.main-title {
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #db2777;
+}
+
+@media (min-width: 768px) {
+  .main-title {
+    font-size: 3.75rem;
+  }
+}
+
+/* Card Slider */
+.card-container {
+  position: relative;
+  width: 100%;
+  max-width: 48rem;
+}
+
+.card-slider {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  background-color: white;
+  padding: 1rem;
+}
+
+.slider-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.control-button {
+  background-color: #ec4899;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 9999px;
+  border: none;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background-color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.control-button:hover {
+  background-color: #db2777;
+}
+
+.control-button i {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.card-counter {
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.cards-wrapper {
+  display: flex;
+  transition: transform 0.5s ease;
+  position: relative;
+}
+
+.birthday-card {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.card-image, .card-video {
+  width: 100%;
+  border-radius: 16px;
+}
+
+.card-quote {
+  margin-top: 10px;
+  font-size: 1.1rem;
+  text-align: center;
+  color: #444;
+}
+
+#music-button{
+  margin: 4%;
+}
+
+
+.card-content {
+  background-color: white;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.card-image-container {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background-color: #f3f4f6;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s;
+}
+
+
+.card-image-placeholder {
+  position: absolute;
+  inset: 0;
+  background-color: #e5e7eb;
+  animation: pulse 2s infinite;
+}
+
+
+.card-video-container {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.card-quote {
+  padding: 1rem;
+  background: linear-gradient(to right, #fce7f3, #ede9fe);
+}
+
+.card-quote p {
+  color: #1f2937;
+  font-style: italic;
+  text-align: center;
+}
+
+.footer-message {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.message-text {
+  font-size: 1.25rem;
+  color: #7e22ce;
+  font-weight: 500;
+}
+
+/* Animations */
+.float-slow {
+  animation: float 8s ease-in-out infinite;
+}
+
+.float-medium {
+  animation: float 6s ease-in-out infinite;
+}
+
+.float-fast {
+  animation: float 4s ease-in-out infinite;
+}
+
+.bounce-slow {
+  animation: bounce 2s ease-in-out infinite;
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(10deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}

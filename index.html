@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birthday Wishes</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <!-- Loading Screen -->
+  <div id="loading-screen" class="loading-screen">
+    <div class="loading-content">
+      <div class="icon-container">
+        <i data-lucide="cake" class="icon"></i>
+        <i data-lucide="gift" class="icon"></i>
+        <i data-lucide="party-popper" class="icon"></i>
+      </div>
+
+      <h1 id="loading-text" class="loading-title">Preparing your birthday surprise</h1>
+      
+      <div id="funny-text" class="funny-text">Blowing up balloons...</div>
+      
+      <div class="progress-container">
+        <div id="progress-bar" class="progress-bar"></div>
+      </div>
+      
+      <div id="progress-text" class="progress-text">0% complete</div>
+      
+      <!-- <div class="loading-icons">
+        <i data-lucide="snowflake" class="snowflake-icon"></i>
+        <i data-lucide="snowflake" class="snowflake-icon"></i>
+        <i data-lucide="snowflake" class="snowflake-icon"></i>
+      </div> -->
+    </div>
+  </div>
+    <!-- Music Play Button -->
+<button id="music-button" class="control-button">
+  <i data-lucide="music" class="icon"></i> Play Music
+</button>
+  <!-- Main Content -->
+  <main id="main-content" class="main-content hidden">
+    <canvas id="confetti-canvas" class="confetti-canvas"></canvas>
+
+    <!-- Floating birthday elements -->
+    <div class="floating-elements">
+      <i data-lucide="cake" class="floating-icon float-slow" style="top: 25%; left: 20%;"></i>
+      <i data-lucide="gift" class="floating-icon float-medium" style="top: 33%; right: 25%;"></i>
+      <i data-lucide="heart" class="floating-icon float-fast" style="bottom: 25%; left: 33%;"></i>
+      <i data-lucide="party-popper" class="floating-icon float-slow" style="top: 66%; right: 33%;"></i>
+      <i data-lucide="gift" class="floating-icon float-medium" style="bottom: 33%; right: 20%;"></i>
+    </div>
+
+    <div class="container">
+      <h1 class="main-title bounce-slow">Happy Birthday!</h1>
+        <h3 class="main-title bounce-slow">Min Mun</h3>
+      <div class="card-container">
+        <!-- Card slider -->
+        <div class="card-slider">
+          <div class="slider-controls">
+            <button id="prev-button" class="control-button" aria-label="Previous card">
+              <i data-lucide="chevron-left"></i>
+            </button>
+            <span id="card-counter" class="card-counter">1 / 5</span>
+            <button id="next-button" class="control-button" aria-label="Next card">
+              <i data-lucide="chevron-right"></i>
+            </button>
+          </div>
+
+          <div id="cards-wrapper" class="cards-wrapper">
+            <!-- Cards will be inserted here by JavaScript -->
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-message">
+        <p class="message-text pulse">Wishing you the most amazing day ever!</p>
+      </div>
+    </div>
+
+
+  </main>
+<audio id="background-music" autoplay loop>
+  <source src="./music.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+  <script src="main.js"></script>
+  <script src="loading.js"></script>
+  <script src="cards.js"></script>
+  <script src="confetti.js"></script>
+
+
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const audio = document.getElementById('background-music');
+    const musicButton = document.getElementById('music-button');
+
+    // Function to try to play the audio
+    const tryPlay = () => {
+      audio.play().then(() => {
+        console.log("Background music playing");
+        musicButton.innerHTML = "<i data-lucide='music' class='icon'></i> Music Playing"; // Change button text
+        musicButton.disabled = true; // Disable button after music starts
+      }).catch(err => {
+        console.warn("Autoplay blocked:", err);
+      });
+      // Remove event listeners after clicking
+      document.removeEventListener('click', tryPlay);
+      document.removeEventListener('touchstart', tryPlay);
+    };
+
+    // Event listener for the music button click
+    musicButton.addEventListener('click', () => {
+      tryPlay();
+    });
+
+    // Add fallback for other interactions
+    document.addEventListener('click', tryPlay);
+    document.addEventListener('touchstart', tryPlay);
+  });
+</script>
+
+
+
+  </script>
+</body>
+</html>
