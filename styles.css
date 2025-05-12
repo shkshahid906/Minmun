@@ -390,3 +390,21 @@ body {
     opacity: 0.7;
   }
 }
+
+
+.funny-quote {
+  font-size: 18px;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f0f8ff;
+  border-radius: 10px;
+  color: #333;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.funny-quote p {
+  font-style: italic;
+  font-weight: bold;
+}

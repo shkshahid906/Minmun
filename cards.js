@@ -4,12 +4,12 @@ const cardsData = [
   {
     type: 'video',
     src: 'ved5.mp4',
-    quote: 'May all your wishes come true today and always!'
+    quote: 'Happy Birthday! May your day be as bright as your smile and as wonderful as you are!'
   },
   {
     type: 'image',
     src: 'img1.jpg',
-    quote: 'Happy Birthday! May your day be as bright as your smile and as wonderful as you are!'
+    quote: 'age is just a number... but wrinkles are a real thing!'
   },
   {
     type: 'video',
@@ -24,7 +24,7 @@ const cardsData = [
   {
     type: 'video',
     src: 'ved6.mp4',
-    quote: 'May all your wishes come true today and always!'
+    quote: 'Muneeb, youre not getting older, youre just increasing in value!'
   },
   {
     type: 'image',
@@ -34,12 +34,22 @@ const cardsData = [
   {
     type: 'video',
     src: 'ved1.mp4',
-    quote: 'May all your wishes come true today and always!'
+    quote: 'Muneeb, you may be one year older, but youre still the same awesome Muneeb!'
+  },
+  {
+    type: 'image',
+    src: 'img4.jpg',
+    quote: 'Count your life by smiles, not tears. Count your age by friends, not years!'
   },
    {
     type: 'video',
     src: 'ved4.mp4',
     quote: 'May all your wishes come true today and always!'
+  },
+  {
+    type: 'video',
+    src: 'ved7.mp4',
+    quote: 'Muneeb, youve got the best birthday hair... its called "gray"!'
   }
 ];
 

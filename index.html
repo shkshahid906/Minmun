@@ -74,6 +74,13 @@
         </div>
       </div>
 
+
+            <!-- Funny Quote Section -->
+      <!-- <div id="funny-quote" class="funny-quote">
+        <p></p> 
+      </div> -->
+
+
       <div class="footer-message">
         <p class="message-text pulse">Wishing you the most amazing day ever!</p>
       </div>
@@ -121,7 +128,53 @@
     document.addEventListener('touchstart', tryPlay);
   });
 </script>
+<script>
 
+document.addEventListener('DOMContentLoaded', () => {
+  // Initialize Lucide icons
+  lucide.createIcons();
+
+  const audio = document.getElementById('background-music');
+  const musicButton = document.getElementById('music-button');
+  
+  // Funny quotes array featuring Muneeb
+  const funnyQuotes = [
+    "Muneeb, age is just a number... but wrinkles are a real thing!",
+    "Muneeb, you're not getting older, you're just increasing in value!",
+    "Muneeb, you've got the best birthday hair... it's called 'gray'!",
+    "Muneeb, remember: you're not getting older, you're just becoming a classic!",
+    "Muneeb, don't worry about the number of candles on your cake... it's just more light to see your wisdom!",
+    "Muneeb, you're like a fine wine—getting better with age, but more expensive!",
+    "Muneeb, you may be one year older, but you're still the same awesome Muneeb!"
+  ];
+
+  // Select a random quote
+  const randomQuote = funnyQuotes[Math.floor(Math.random() * funnyQuotes.length)];
+
+  // Display the random quote
+  const quoteElement = document.getElementById('funny-quote').querySelector('p');
+  quoteElement.textContent = randomQuote;
+
+  // Music play functionality
+  const tryPlay = () => {
+    audio.play().then(() => {
+      console.log("Background music playing");
+      musicButton.innerHTML = "<i data-lucide='music' class='icon'></i> Music Playing"; // Change button text
+      musicButton.disabled = true; // Disable the button after music starts
+    }).catch(err => {
+      console.warn("Autoplay blocked:", err);
+    });
+    document.removeEventListener('click', tryPlay);
+    document.removeEventListener('touchstart', tryPlay);
+  };
+
+  musicButton.addEventListener('click', () => {
+    tryPlay();
+  });
+
+  document.addEventListener('click', tryPlay);
+  document.addEventListener('touchstart', tryPlay);
+});
 
 
   </script>
